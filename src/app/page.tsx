@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Listings from "@/components/Listings";
+import Gallery from "@/components/Gallery";
 import Expertise from "@/components/Expertise";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <Services />
         <Listings />
+        <Gallery />
         <Expertise />
         <Contact />
       </main>

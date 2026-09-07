@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 const selectClasses =
@@ -8,12 +7,6 @@ const selectClasses =
 const inputClasses =
   "w-full bg-transparent border-b border-charcoal/20 focus:border-gold outline-none py-2 text-sm placeholder:text-stone/60";
 const labelClasses = "block text-xs tracking-widest uppercase text-stone mb-1";
-
-const gallery = [
-  { src: "/images/stock-listing1.jpg", alt: "Featured Pahrump listing" },
-  { src: "/images/stock-listing2.jpg", alt: "Featured Pahrump listing" },
-  { src: "/images/stock-listing3.jpg", alt: "Featured Pahrump listing" },
-];
 
 export default function Listings() {
   const [submitted, setSubmitted] = useState(false);
@@ -104,20 +97,6 @@ export default function Listings() {
             )}
           </div>
         </form>
-
-        <div className="grid sm:grid-cols-3 gap-6">
-          {gallery.map((g) => (
-            <div key={g.src} className="reveal relative aspect-square overflow-hidden group">
-              <Image
-                src={g.src}
-                alt={g.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
