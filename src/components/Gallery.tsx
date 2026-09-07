@@ -13,13 +13,41 @@ const badges = [
 ];
 
 const photos = [
-  { src: "/images/gallery/beacon-ridge-1.jpg", alt: "Aerial view of community pool and courts", label: "Community Courts" },
-  { src: "/images/gallery/beacon-ridge-2.jpg", alt: "Bright sunroom with mountain views", label: "Sunroom Views" },
-  { src: "/images/gallery/beacon-ridge-3.jpg", alt: "Neighborhood street view", label: "The Neighborhood" },
-  { src: "/images/gallery/roseworthy.jpg", alt: "Aerial view of community amenities", label: "Community Amenities" },
-  { src: "/images/gallery/ailanto-1.jpg", alt: "Community pool area", label: "Resort-Style Pool" },
-  { src: "/images/gallery/ailanto-2.jpg", alt: "Tennis and pickleball courts", label: "Tennis & Pickleball" },
-  { src: "/images/gallery/ailanto-3.jpg", alt: "Aerial view of neighborhood", label: "Aerial View" },
+  {
+    src: "/images/gallery/beacon-ridge-1.jpg",
+    alt: "Aerial view of community pool and courts",
+    label: "Community Courts",
+  },
+  {
+    src: "/images/gallery/beacon-ridge-2.jpg",
+    alt: "Bright sunroom with mountain views",
+    label: "Sunroom Views",
+  },
+  {
+    src: "/images/gallery/beacon-ridge-3.jpg",
+    alt: "Neighborhood street view",
+    label: "The Neighborhood",
+  },
+  {
+    src: "/images/gallery/roseworthy.jpg",
+    alt: "Aerial view of community amenities",
+    label: "Community Amenities",
+  },
+  {
+    src: "/images/gallery/ailanto-1.jpg",
+    alt: "Community pool area",
+    label: "Resort-Style Pool",
+  },
+  {
+    src: "/images/gallery/ailanto-2.jpg",
+    alt: "Tennis and pickleball courts",
+    label: "Tennis & Pickleball",
+  },
+  {
+    src: "/images/gallery/ailanto-3.jpg",
+    alt: "Aerial view of neighborhood",
+    label: "Aerial View",
+  },
 ];
 
 export default function Gallery() {
@@ -27,10 +55,13 @@ export default function Gallery() {
 
   return (
     <>
-      <section className="bg-cream py-16 md:py-20">
-        <div className="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-center gap-10 md:gap-16">
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-center gap-10 md:gap-35">
           {badges.map((b) => (
-            <div key={b.src} className="reveal w-16 h-16 md:w-20 md:h-20 shrink-0">
+            <div
+              key={b.src}
+              className="reveal w-16 h-16 md:w-25 md:h-25 shrink-0"
+            >
               <Image
                 src={b.src}
                 alt={b.alt}
@@ -53,7 +84,11 @@ export default function Gallery() {
 
           <div className="reveal hidden md:block">
             <AccordionGallery
-              items={photos.map((p) => ({ image: p.src, alt: p.alt, label: p.label }))}
+              items={photos.map((p) => ({
+                image: p.src,
+                alt: p.alt,
+                label: p.label,
+              }))}
               defaultIndex={0}
               accentColor="#b08d57"
               overlayColor="#262220"

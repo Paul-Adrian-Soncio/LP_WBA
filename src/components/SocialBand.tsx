@@ -3,7 +3,7 @@ import { SOCIAL_LINKS, SocialIcon } from "./SocialIcons";
 export default function SocialBand() {
   return (
     <section className="bg-charcoal py-16 md:py-20">
-      <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-5">
+      <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-15">
         {SOCIAL_LINKS.map(({ name, href }) => (
           <a
             key={name}

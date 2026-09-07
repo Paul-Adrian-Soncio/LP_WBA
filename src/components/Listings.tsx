@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const selectClasses =
   "w-full bg-transparent border-b border-charcoal/20 focus:border-gold outline-none py-2 text-sm appearance-none";
@@ -11,14 +11,22 @@ const labelClasses = "block text-xs tracking-widest uppercase text-stone mb-1";
 export default function Listings() {
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (!submitted) return;
+    const timer = setTimeout(() => setSubmitted(false), 4000);
+    return () => clearTimeout(timer);
+  }, [submitted]);
+
   return (
-    <section id="listings" className="bg-cream py-24 md:py-32">
+    <section id="listings" className="bg-cream py-24 md:py-15">
       <div className="max-w-6xl mx-auto px-6">
         <div className="reveal text-center max-w-2xl mx-auto mb-14">
           <p className="tracking-[0.3em] uppercase text-xs text-gold mb-4">
             Find Your Dream Home
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-medium">Search Listings</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-medium">
+            Search Listings
+          </h2>
         </div>
 
         <form
@@ -29,11 +37,19 @@ export default function Listings() {
           className="reveal bg-cream-dark/60 border border-charcoal/10 p-8 md:p-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 mb-16"
         >
           <div>
-            <label className={labelClasses} htmlFor="s-location">Location</label>
-            <input id="s-location" className={inputClasses} placeholder="City, ZIP, or Neighborhood" />
+            <label className={labelClasses} htmlFor="s-location">
+              Location
+            </label>
+            <input
+              id="s-location"
+              className={inputClasses}
+              placeholder="City, ZIP, or Neighborhood"
+            />
           </div>
           <div>
-            <label className={labelClasses} htmlFor="s-type">Type</label>
+            <label className={labelClasses} htmlFor="s-type">
+              Type
+            </label>
             <select id="s-type" className={selectClasses} defaultValue="Any">
               <option>Any</option>
               <option>Residential</option>
@@ -42,8 +58,14 @@ export default function Listings() {
             </select>
           </div>
           <div>
-            <label className={labelClasses} htmlFor="s-beds">Bedrooms</label>
-            <select id="s-beds" className={selectClasses} defaultValue="Any Number">
+            <label className={labelClasses} htmlFor="s-beds">
+              Bedrooms
+            </label>
+            <select
+              id="s-beds"
+              className={selectClasses}
+              defaultValue="Any Number"
+            >
               <option>Any Number</option>
               <option>Studio</option>
               <option>1+</option>
@@ -53,8 +75,14 @@ export default function Listings() {
             </select>
           </div>
           <div>
-            <label className={labelClasses} htmlFor="s-baths">Bathrooms</label>
-            <select id="s-baths" className={selectClasses} defaultValue="Any Number">
+            <label className={labelClasses} htmlFor="s-baths">
+              Bathrooms
+            </label>
+            <select
+              id="s-baths"
+              className={selectClasses}
+              defaultValue="Any Number"
+            >
               <option>Any Number</option>
               <option>1+</option>
               <option>2+</option>
@@ -62,15 +90,21 @@ export default function Listings() {
             </select>
           </div>
           <div>
-            <label className={labelClasses} htmlFor="s-min">Min Price</label>
+            <label className={labelClasses} htmlFor="s-min">
+              Min Price
+            </label>
             <input id="s-min" className={inputClasses} placeholder="$0" />
           </div>
           <div>
-            <label className={labelClasses} htmlFor="s-max">Max Price</label>
+            <label className={labelClasses} htmlFor="s-max">
+              Max Price
+            </label>
             <input id="s-max" className={inputClasses} placeholder="No Max" />
           </div>
           <div className="sm:col-span-2">
-            <label className={labelClasses} htmlFor="s-sort">Sort By</label>
+            <label className={labelClasses} htmlFor="s-sort">
+              Sort By
+            </label>
             <select id="s-sort" className={selectClasses} defaultValue="Newest">
               <option>Newest</option>
               <option>Oldest</option>
@@ -92,7 +126,7 @@ export default function Listings() {
             </button>
             {submitted && (
               <p className="text-sm text-stone">
-                Thanks! We&rsquo;ll email you a list of matching homes shortly.
+                This is only a demo, no functions found here!
               </p>
             )}
           </div>
