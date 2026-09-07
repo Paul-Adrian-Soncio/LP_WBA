@@ -8,6 +8,7 @@ import Gallery from "@/components/Gallery";
 import Expertise from "@/components/Expertise";
 import SocialBand from "@/components/SocialBand";
 import Contact from "@/components/Contact";
+import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import MobileCallFab from "@/components/MobileCallFab";
@@ -29,6 +30,7 @@ export default function Home() {
         <SocialBand />
         <Contact />
       </main>
+      <LocationMap />
       <Footer />
       <CookieBanner />
       <MobileCallFab />
