@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Listings from "@/components/Listings";
 import Gallery from "@/components/Gallery";
 import Expertise from "@/components/Expertise";
+import SocialBand from "@/components/SocialBand";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
@@ -25,6 +26,7 @@ export default function Home() {
         <Listings />
         <Gallery />
         <Expertise />
+        <SocialBand />
         <Contact />
       </main>
       <Footer />

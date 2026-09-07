@@ -42,19 +42,6 @@ export default function Contact() {
               <span className="text-stone">Open Daily &middot; 8:00 AM &ndash; 7:00 PM</span>
             </li>
           </ul>
-
-          <div className="flex gap-4">
-            {["Facebook", "Instagram", "LinkedIn", "Yelp"].map((name) => (
-              <a
-                key={name}
-                href="#"
-                aria-label={name}
-                className="w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center text-stone hover:border-gold hover:text-gold transition-colors"
-              >
-                <SocialIcon name={name} />
-              </a>
-            ))}
-          </div>
         </div>
 
         <form
@@ -123,35 +110,4 @@ function ClockIcon() {
       <path d="M12 6v6l4 2" />
     </svg>
   );
-}
-
-function SocialIcon({ name }: { name: string }) {
-  switch (name) {
-    case "Facebook":
-      return (
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z" />
-        </svg>
-      );
-    case "Instagram":
-      return (
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="2" y="2" width="20" height="20" rx="5" />
-          <circle cx="12" cy="12" r="4" />
-          <circle cx="17.5" cy="6.5" r="1" />
-        </svg>
-      );
-    case "LinkedIn":
-      return (
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.5h4.5V23H.24V8.5zM8.5 8.5h4.31v1.98h.06c.6-1.13 2.07-2.32 4.26-2.32 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.94c0-1.66-.03-3.8-2.32-3.8-2.32 0-2.67 1.81-2.67 3.68V23H8.5V8.5z" />
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1.2 5.2c.2-.5.9-.6 1.5-.5l2.9.9c.6.2.9.8.6 1.4l-1.8 3.6a1 1 0 0 1-1.7.1l-1.8-2.9a1 1 0 0 1 .3-2.6zm-2.6 4.9 3.2 1.4a1 1 0 0 1 .1 1.8l-2.7 2a1 1 0 0 1-1.5-.7l-.4-3.4a1 1 0 0 1 1.3-1.1zm7.4 1.6 3.3-.8a1 1 0 0 1 1.1 1.4l-1.4 3a1 1 0 0 1-1.7.2l-2-2.4a1 1 0 0 1 .7-1.4z" />
-        </svg>
-      );
-  }
 }
